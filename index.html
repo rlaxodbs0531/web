@@ -122,12 +122,12 @@
 			<section>
 				<div class="logoIn">
 					<div class="logoInBox">
-						<input type="text" placeholder="이메일">
+						<input type="text" id="id" placeholder="이메일">
 						<a href="sign_up.html"><button>가입</button></a>
 					</div>
 					<div class="logoInBox">
-						<input type="password" placeholder="비밀번호">
-						<a href="login_main.html"><button>로그인</button></a>
+						<input type="password" id="password" placeholder="비밀번호">
+						<a href="#"><button onclick="login(); return false;">로그인</button></a>
 					</div>
 					<a class="pw-search" href="find_passwd.html">비밀번호 찾기</a>
 				</div>
@@ -140,5 +140,21 @@
 		</div>
 	</main>
 </body>
+<script>
+	function login()
+	{
+		let id = document.getElementById('id');
+		let passwd = document.getElementById('password');
 
+		if (id.value === "root" && passwd.value === "1234") {
+			const go = "login_main.html";
+			location.href = go;
+		}
+		else {
+			const re = "index.html";
+			alert("아이디 또는 패스워드가 틀렸습니다.");
+			location.href = re;
+		}
+	}
+</script>
 </html>
